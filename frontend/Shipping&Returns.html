@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Farm2Market: A Transparent E-Commerce Platform for Farmers 🌱🛍️
+    </title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/c3e707a6b1.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+        .shipping-returns-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .policy-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .policy-content h2 {
+            color: #2b572d;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+
+        .shipping-section,
+        .return-section {
+            margin-bottom: 40px;
+        }
+
+        .policy-content h3 {
+            color: #2b572d;
+            margin: 30px 0 20px;
+            font-size: 24px;
+        }
+
+        .policy-content p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .shipping-returns-container {
+                margin: 30px auto;
+            }
+
+            .policy-content {
+                padding: 20px;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <i class="fas fa-shopping-basket"></i>
+        <h1>Farm2Market</h1>
+      </div>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Shop.html">Shop</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="search-login">
+        <div class="search-box">
+          <input type="text" placeholder="Search..." />
+          <i class="fas fa-search"></i>
+        </div>
+
+        <div class="profile">
+          <a href="login.html" style="text-decoration: none"
+            ><i class="fas fa-user user-icon"></i
+          ></a>
+        </div>
+
+        <div class="cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count">0</span>
+        </div>
+      </div>
+    </header>
+    
+    
+
+    <main class="shipping-returns-container">
+        <div class="policy-content">
+            <h2>Shipping & Returns</h2>
+
+            <section class="shipping-section">
+                <h3>Shipping Policy</h3>
+                <p>
+                    I'm a shipping policy section. I'm a great place to update your customers about your shipping methods, packaging and costs. Use plain, straightforward language to build trust and make sure that your customers stay loyal!
+                </p>
+                <p>
+                    I'm the second paragraph in your shipping policy section. Click here to add your own text and edit me. It's easy. Just click "Edit Text" or double click me to add details about your policy and make changes to the font. I'm a great place for you to tell a story and let your users know a little more about you.
+                </p>
+            </section>
+
+            <section class="return-section">
+                <h3>Return & Exchange Policy</h3>
+                <p>
+                    I'm a return policy section. I'm a great place to let your customers know what to do in case they've changed their mind about their purchase, or if they're dissatisfied with a product. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.
+                </p>
+                <p>
+                    I'm the second paragraph in your Return & Exchange policy. Click here to add your own text and edit me. It's easy. Just click "Edit Text" or double click me to add details about your policy and make changes to the font. I'm a great place for you to tell a story and let your users know a little more about you.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>STORE</h3>
+          <ul>
+            <li><a href="index.html">Shop All</a></li>
+            <li><a href="Shipping&Returns.html">Shipping & Returns</a></li>
+            <li><a href="#">Store Policy</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>ADDRESS</h3>
+          <ul>
+            <li><a href="#">VIT UNIVERSITY</a></li>
+            <li><a href="#">VELLORE, 632104</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>OPENING HOURS</h3>
+          <ul>
+            <li><a href="#">Mon - Fri: 7am - 10pm</a></li>
+            <li><a href="#">Saturday: 8am - 10pm</a></li>
+            <li><a href="#">Sunday: 8am - 11pm</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section newsletter">
+          <h3>GET IT FRESH</h3>
+          <form>
+            <label for="email">Email *</label>
+            <input type="email" id="email" placeholder="Enter your email" />
+            <div class="checkbox-container">
+              <input type="checkbox" id="subscribe" />
+              <label for="subscribe"
+                >Yes, subscribe me to your newsletter.</label
+              >
+            </div>
+            <button type="submit">SUBSCRIBE NOW</button>
+          </form>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-bottom">
+        © 2035 by Farm2Market. Powered and secured by <a href="#">YNY</a>
+      </p>
+    </footer>
+    <script>
+      let index = 0;
+
+      function moveSlide(step) {
+        const slides = document.querySelector(".slides");
+        const totalSlides = document.querySelectorAll(".slide").length;
+
+        index += step;
+
+        if (index >= totalSlides) {
+          index = 0;
+        } else if (index < 0) {
+          index = totalSlides - 1;
+        }
+
+        slides.style.transform = `translateX(${-index * 100}%)`;
+      }
+
+      // Auto-slide every 4 seconds
+      setInterval(() => {
+        moveSlide(1);
+      }, 4000);
+    </script>
+  </body>
+</html>
