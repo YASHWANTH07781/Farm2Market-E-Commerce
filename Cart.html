@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart - Farm2Market</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="cart.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/c3e707a6b1.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      #cart-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+      }
+
+      .cart-item {
+        flex: 0 0 250px;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .shopping-cart {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+      }
+
+      .cart-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: flex-start;
+        padding: 20px 0;
+      }
+
+      .cart-item {
+        flex: 0 0 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .cart-item img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        margin-bottom: 15px;
+      }
+
+      .cart-item h3 {
+        margin: 10px 0;
+        color: #333;
+      }
+
+      .cart-item .price {
+        color: #2b572d;
+        font-weight: bold;
+        margin: 5px 0;
+      }
+
+      .cart-item .quantity {
+        margin: 10px 0;
+      }
+
+      .cart-total {
+        text-align: right;
+        margin-top: 20px;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .checkout-btn {
+        background-color: #2b572d;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .checkout-btn:hover {
+        background-color: #234a25;
+      }
+
+      .remove-btn {
+        background-color: #ff4444;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .remove-btn:hover {
+        background-color: #cc0000;
+      }
+      #cart-total {
+        text-align: right;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 20px;
+        color: #2b572d;
+      }
+
+      /* Responsive adjustments for cart */
+      @media (max-width: 768px) {
+        .cart-items {
+          justify-content: center;
+        }
+
+        .cart-item {
+          flex: 0 0 280px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <i class="fas fa-shopping-basket"></i>
+        <h1>Farm2Market</h1>
+      </div>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Shop.html">Shop</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="search-login">
+        <div class="search-box">
+          <input type="text" placeholder="Search..." />
+          <i class="fas fa-search"></i>
+        </div>
+
+        <div class="profile">
+          <a href="login.html" style="text-decoration: none"
+            ><i class="fas fa-user user-icon"></i
+          ></a>
+        </div>
+
+        <div class="cart">
+          <a href="Cart.html"><i class="fas fa-shopping-bag"></i></a>
+          <span class="cart-count">0</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="cart-container">
+      <h1>Shopping Cart</h1>
+      <div id="cart-items"></div>
+      <div class="cart-summary">
+        <h3>Total: ₹<span id="cart-total">0.00</span></h3>
+        <!-- Replace the existing checkout button with -->
+        <button
+          onclick="window.location.href='checkout.html'"
+          class="checkout-btn"
+        >
+          Proceed to Checkout
+        </button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>STORE</h3>
+          <ul>
+            <li><a href="index.html">Shop All</a></li>
+            <li><a href="Shipping&Returns.html">Shipping & Returns</a></li>
+            <li><a href="#">Store Policy</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>ADDRESS</h3>
+          <ul>
+            <li><a href="#">VIT UNIVERSITY</a></li>
+            <li><a href="#">VELLORE, 632014</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>OPENING HOURS</h3>
+          <ul>
+            <li><a href="#">Mon - Fri: 7am - 10pm</a></li>
+            <li><a href="#">Saturday: 8am - 10pm</a></li>
+            <li><a href="#">Sunday: 8am - 11pm</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section newsletter">
+          <h3>GET IT FRESH</h3>
+          <form>
+            <label for="email">Email *</label>
+            <input type="email" id="email" placeholder="Enter your email" />
+            <div class="checkbox-container">
+              <input type="checkbox" id="subscribe" />
+              <label for="subscribe"
+                >Yes, subscribe me to your newsletter.</label
+              >
+            </div>
+            <button type="submit">SUBSCRIBE NOW</button>
+          </form>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-bottom">
+        © 2035 by Farm2Market. Powered and secured by <a href="#">YNY</a>
+      </p>
+    </footer>
+  </body>
+</html>
