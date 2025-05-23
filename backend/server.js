@@ -5,6 +5,12 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const PORT = 3000;
+const express = require('express');
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Middleware
 app.use(cors());  // Enable CORS for frontend-backend communication
