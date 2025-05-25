@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Farm2Market: A Transparent E-Commerce Platform for Farmers 🌱🛍️
+    </title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/c3e707a6b1.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* General styles */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+      }
+
+      h2,
+      h3 {
+        margin: 10px 0;
+      }
+
+      /* Section container */
+      .body-container {
+        display: flex;
+        padding: 20px;
+      }
+
+      /* Sidebar styles */
+      .sidebar {
+        width: 25%;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-right: 20px;
+      }
+
+      .sidebar h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #333;
+      }
+
+      .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        margin-bottom: 10px;
+      }
+
+      .sidebar ul li a {
+        text-decoration: none;
+        color: #666;
+      }
+
+      .sidebar input[type="range"] {
+        
+        width: 100%;
+      }
+
+      /* Main content styles */
+      .main-content {
+        width: 75%;
+      }
+
+      .image-container img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      .text-section h2 {
+        font-size: 24px;
+        color: #333;
+      }
+
+      .text-section p {
+        font-size: 16px;
+        color: #666;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+
+      /* Product grid styles */
+      #product-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 200px;
+
+      }
+      a{
+        text-decoration: none;
+      }
+      #product-grid ul{
+        list-style: none;
+
+        gap: 100px;
+      }
+      .product-card {
+        width: calc(33.333% - 20px); /* Three cards per row */
+        background-color: #fff;
+        padding: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .product-card img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .product-card .price {
+        font-size: 18px;
+        color: #333;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <i class="fas fa-shopping-basket"></i>
+        <h1>Farm2Market</h1>
+      </div>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Shop.html">Shop</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="search-login">
+        <div class="search-box">
+          <input type="text" placeholder="Search..." />
+          <i class="fas fa-search"></i>
+        </div>
+
+        <div class="profile">
+          <a href="login.html" style="text-decoration: none"
+            ><i class="fas fa-user user-icon"></i
+          ></a>
+        </div>
+
+        <div class="cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count">0</span>
+        </div>
+      </div>
+    </header>
+    <section class="body-container">
+      <div class="sidebar">
+        <h2>Browse by</h2>
+        <ul>
+          <li><a href="#">All Products</a></li>
+          <li><a href="#">Bread & Grains</a></li>
+          <li><a href="#">Dairy & Eggs</a></li>
+          <li><a href="#">Grab 'N Go!</a></li>
+          <li><a href="#">Household Goods</a></li>
+          <li><a href="#">Produce</a></li>
+          <li><a href="#">Weekly Deals</a></li>
+        </ul>
+        <h2>Filter by</h2>
+        <label for="price">Price</label>
+        <input placeholder="10-1000" type="range" id="price" name="price" min="10" max="1000" />
+      </div>
+
+      <div class="main-content">
+        <div class="image-container">
+          <img
+            src="Cover.avif"
+            alt="Reusable bag filled with produce"
+          />
+        </div>
+        <div class="text-section">
+          <h2>All Products</h2>
+          <p>
+            This is your category description. It's a great place to tell
+            customers what this category is about, connect with your audience
+            and draw attention to your products.
+          </p>
+        </div>
+        <div id="product-grid">
+          <ul class="product-grid">
+            <li>
+              <span class="badge">Special Price</span>
+              <img src="WD-cheese.jpg" alt="Cheese" />
+              <p>Cheese</p>
+              <br />
+              <p class="price">₹9.99</p>
+              <div class="quantity">
+                <button onclick="decrement()">-</button>
+                <input type="text" id="quantityValue" value="1" readonly />
+                <button onclick="increment()">+</button>
+              </div>
+    
+              <button class="add-to-cart">Add to Cart</button>
+            </li>
+    
+            <li>
+              <img src="WD-pears.jpg" alt="Pears" />
+              <p>Pears</p>
+              <br />
+              <p class="price">₹9.99</p>
+              <div class="quantity">
+                <button onclick="decrement()">-</button>
+                <input type="text" id="quantityValue" value="1" readonly />
+                <button onclick="increment()">+</button>
+              </div>
+              <br />
+              <button class="add-to-cart">Add to Cart</button>
+            </li>
+    
+            <li>
+              <img src="WD-milk.jpg" alt="Fresh Milk" />
+              <p>Fresh Milk</p>
+              <br />
+              <p class="price">₹9.99</p>
+              <div class="quantity">
+                <button onclick="decrement()">-</button>
+                <input type="text" id="quantityValue" value="1" readonly />
+                <button onclick="increment()">+</button>
+              </div>
+              <button class="add-to-cart">Add to Cart</button>
+            </li>
+    
+            <li>
+              <span class="badge">Special Price</span>
+              <img
+                src="WD-bananas.jpg"
+                alt="Bananas"
+                width="225px"
+                height="225px"
+              />
+              <p>Bananas</p>
+              <br />
+              <p class="price">₹9.99</p>
+              <div class="quantity">
+                <button onclick="decrement()">-</button>
+                <input type="text" id="quantityValue" value="1" readonly />
+                <button onclick="increment()">+</button>
+              </div>
+              <br />
+              <button class="add-to-cart">Add to Cart</button>
+            </li>
+    
+            <li>
+              <span class="badge">Special Price</span>
+              <img src="WD-eggs.jpg" alt="Eggs" />
+              <p>Eggs</p>
+              <br />
+              <br />
+              <p class="price"><del>₹9.99</del> ₹8.99</p>
+              <div class="quantity">
+                <button onclick="decrement()">-</button>
+                <input type="text" id="quantityValue" value="1" readonly />
+                <button onclick="increment()">+</button>
+              </div>
+              <br />
+              <button class="add-to-cart">Add to Cart</button>
+            </li>
+    
+            <li>
+              <img src="WD-bread.jpg" alt="Bread" />
+              <p>Bread</p>
+              <br />
+              <p class="price">₹9.99</p>
+              <div class="quantity">
+                <button onclick="decrement()">-</button>
+                <input type="text" id="quantityValue" value="1" readonly />
+                <button onclick="increment()">+</button>
+              </div>
+              <br />
+              <button class="add-to-cart">Add to Cart</button>
+            </li>
+    
+            <li>
+              <img src="WD-rice.jpg" alt="Rice" />
+              <p>Rice</p>
+              <br />
+              <p class="price">₹9.99</p>
+              <div class="quantity">
+                <button onclick="decrement()">-</button>
+                <input type="text" id="quantityValue" value="1" readonly />
+                <button onclick="increment()">+</button>
+              </div>
+              <br />
+              <button class="add-to-cart">Add to Cart</button>
+            </li>
+    
+            <li>
+              <img src="WD-potatoes.jpg" alt="Potatoes" />
+              <p>Potatoes</p>
+              <br />
+              <p class="price">₹9.99</p>
+              <div class="quantity">
+                <button onclick="decrement()">-</button>
+                <input type="text" id="quantityValue" value="1" readonly />
+                <button onclick="increment()">+</button>
+              </div>
+              <br />
+              <button class="add-to-cart">Add to Cart</button>
+            </li>
+          </ul>
+          <!-- Repeat similar blocks for other products -->
+        </div>
+      </div>
+    </section>
+    
+    <section class="WD-products">
+      <h2>Grab 'N Go</h2>
+      <p>Find your favorite groceries at the best prices!</p>
+      <br> <br>
+      <ul class="product-grid">
+        <li>
+          <span class="badge">Special Price</span>
+          <img src="WD-cheese.jpg" alt="Cheese" />
+          <p>Cheese</p>
+          <br />
+          <p class="price">₹9.99</p>
+          <div class="quantity">
+            <button onclick="decrement()">-</button>
+            <input type="text" id="quantityValue" value="1" readonly />
+            <button onclick="increment()">+</button>
+          </div>
+
+          <button class="add-to-cart">Add to Cart</button>
+        </li>
+
+        <li>
+          <img src="WD-pears.jpg" alt="Pears" />
+          <p>Pears</p>
+          <br />
+          <p class="price">₹9.99</p>
+          <div class="quantity">
+            <button onclick="decrement()">-</button>
+            <input type="text" id="quantityValue" value="1" readonly />
+            <button onclick="increment()">+</button>
+          </div>
+          <br />
+          <button class="add-to-cart">Add to Cart</button>
+        </li>
+
+        <li>
+          <img src="WD-milk.jpg" alt="Fresh Milk" />
+          <p>Fresh Milk</p>
+          <br />
+          <p class="price">₹9.99</p>
+          <div class="quantity">
+            <button onclick="decrement()">-</button>
+            <input type="text" id="quantityValue" value="1" readonly />
+            <button onclick="increment()">+</button>
+          </div>
+          <button class="add-to-cart">Add to Cart</button>
+        </li>
+
+        <li>
+          <span class="badge">Special Price</span>
+          <img
+            src="WD-bananas.jpg"
+            alt="Bananas"
+            width="225px"
+            height="225px"
+          />
+          <p>Bananas</p>
+          <br />
+          <p class="price">₹9.99</p>
+          <div class="quantity">
+            <button onclick="decrement()">-</button>
+            <input type="text" id="quantityValue" value="1" readonly />
+            <button onclick="increment()">+</button>
+          </div>
+          <br />
+          <button class="add-to-cart">Add to Cart</button>
+        </li>
+
+        <li>
+          <span class="badge">Special Price</span>
+          <img src="WD-eggs.jpg" alt="Eggs" />
+          <p>Eggs</p>
+          <br />
+          <br />
+          <p class="price"><del>₹9.99</del> ₹8.99</p>
+          <div class="quantity">
+            <button onclick="decrement()">-</button>
+            <input type="text" id="quantityValue" value="1" readonly />
+            <button onclick="increment()">+</button>
+          </div>
+          <br />
+          <button class="add-to-cart">Add to Cart</button>
+        </li>
+
+        <li>
+          <img src="WD-bread.jpg" alt="Bread" />
+          <p>Bread</p>
+          <br />
+          <p class="price">₹9.99</p>
+          <div class="quantity">
+            <button onclick="decrement()">-</button>
+            <input type="text" id="quantityValue" value="1" readonly />
+            <button onclick="increment()">+</button>
+          </div>
+          <br />
+          <button class="add-to-cart">Add to Cart</button>
+        </li>
+
+        <li>
+          <img src="WD-rice.jpg" alt="Rice" />
+          <p>Rice</p>
+          <br />
+          <p class="price">₹9.99</p>
+          <div class="quantity">
+            <button onclick="decrement()">-</button>
+            <input type="text" id="quantityValue" value="1" readonly />
+            <button onclick="increment()">+</button>
+          </div>
+          <br />
+          <button class="add-to-cart">Add to Cart</button>
+        </li>
+
+        <li>
+          <img src="WD-potatoes.jpg" alt="Potatoes" />
+          <p>Potatoes</p>
+          <br />
+          <p class="price">₹9.99</p>
+          <div class="quantity">
+            <button onclick="decrement()">-</button>
+            <input type="text" id="quantityValue" value="1" readonly />
+            <button onclick="increment()">+</button>
+          </div>
+          <br />
+          <button class="add-to-cart">Add to Cart</button>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>STORE</h3>
+          <ul>
+            <li><a href="index.html">Shop All</a></li>
+            <li><a href="Shipping&Returns.html">Shipping & Returns</a></li>
+            <li><a href="#">Store Policy</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>ADDRESS</h3>
+          <ul>
+            <li><a href="#">VIT UNIVERSITY</a></li>
+            <li><a href="#">VELLORE, 632104</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>OPENING HOURS</h3>
+          <ul>
+            <li><a href="#">Mon - Fri: 7am - 10pm</a></li>
+            <li><a href="#">Saturday: 8am - 10pm</a></li>
+            <li><a href="#">Sunday: 8am - 11pm</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section newsletter">
+          <h3>GET IT FRESH</h3>
+          <form>
+            <label for="email">Email *</label>
+            <input type="email" id="email" placeholder="Enter your email" />
+            <div class="checkbox-container">
+              <input type="checkbox" id="subscribe" />
+              <label for="subscribe"
+                >Yes, subscribe me to your newsletter.</label
+              >
+            </div>
+            <button type="submit">SUBSCRIBE NOW</button>
+          </form>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-bottom">
+        © 2035 by Farm2Market. Powered and secured by <a href="#">YNY</a>
+      </p>
+    </footer>
+  </body>
+</html>
